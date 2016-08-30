@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+
+This was copied from the DotNetType.format.ps1xml file and modified
+to fit my needs.
+
+Any changes made to this file may be overwritten in future module updates
+
+-->
+<Configuration>
+    <ViewDefinitions>
+      <View>
+          <Name>default</Name>
+            <ViewSelectedBy>
+                <TypeName>My.ScheduledReminder</TypeName>
+            </ViewSelectedBy>
+               <TableControl>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>ID</Label>
+                        <Width>4</Width>
+                        <Alignment>Right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Name</Label>
+                        <Width>15</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>When</Label>
+                        <Width>20</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                     <TableColumnHeader>
+                        <Label>TimeRemaining</Label>
+                        <Width>16</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Wait(Min)</Label>
+                        <Width>10</Width>
+                        <Alignment>Right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Message</Label>
+                        <Width>30</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>               
+                </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>ID</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Name</PropertyName>
+                            </TableColumnItem>
+                             <TableColumnItem>
+                                <PropertyName>When</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <Scriptblock>
+                                ($_.When - (Get-Date)).ToString()
+                                </Scriptblock>
+                            </TableColumnItem>
+                             <TableColumnItem>
+                                <Scriptblock>
+                                $_.Wait/60
+                                </Scriptblock>
+                            </TableColumnItem>
+                             <TableColumnItem>
+                                <PropertyName>Message</PropertyName>
+                            </TableColumnItem>
+                           
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+      <View>
+      <!-- creating a custom view -->
+            <Name>Application</Name>
+            <ViewSelectedBy>
+                <TypeName>My.Type.Name</TypeName>
+            </ViewSelectedBy>
+            <GroupBy>
+                <PropertyName>Application</PropertyName>
+            </GroupBy>
+            <TableControl>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Time</Label>
+                        <Width>17</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>WindowTitle</Label>
+                        <Width>45</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Product</Label>
+                        <Width>37</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>Time</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>WindowTitle</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Product</PropertyName>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+      </ViewDefinitions>
+</Configuration>

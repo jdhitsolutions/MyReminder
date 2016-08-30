@@ -5,6 +5,7 @@ TODO:
     
     Add parameters to set as recurring reminder
     Export and import reminders
+    Add custom format extension
     
 #>
 
