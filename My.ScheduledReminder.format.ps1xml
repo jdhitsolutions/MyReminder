@@ -26,15 +26,20 @@ Any changes made to this file may be overwritten in future module updates
                         <Width>15</Width>
                         <Alignment>Left</Alignment>
                     </TableColumnHeader>
+                     <TableColumnHeader>
+                        <Label>Schedule</Label>
+                        <Width>10</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
                     <TableColumnHeader>
                         <Label>When</Label>
-                        <Width>20</Width>
+                        <Width>22</Width>
                         <Alignment>Left</Alignment>
                     </TableColumnHeader>
                      <TableColumnHeader>
                         <Label>TimeRemaining</Label>
                         <Width>16</Width>
-                        <Alignment>Left</Alignment>
+                        <Alignment>Right</Alignment>
                     </TableColumnHeader>
                     <TableColumnHeader>
                         <Label>Wait(Min)</Label>
@@ -56,18 +61,22 @@ Any changes made to this file may be overwritten in future module updates
                             <TableColumnItem>
                                 <PropertyName>Name</PropertyName>
                             </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Schedule</PropertyName>
+                            </TableColumnItem>
                              <TableColumnItem>
                                 <PropertyName>When</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
                                 <Scriptblock>
-                                ($_.When - (Get-Date)).ToString()
+                                $t = ($_.When - (Get-Date)).ToString()
+                                $t.Substring(0,$t.LastIndexOf("."))
                                 </Scriptblock>
                             </TableColumnItem>
                              <TableColumnItem>
-                                <Scriptblock>
+                               <Scriptblock>
                                 $_.Wait/60
-                                </Scriptblock>
+                               </Scriptblock>
                             </TableColumnItem>
                              <TableColumnItem>
                                 <PropertyName>Message</PropertyName>
