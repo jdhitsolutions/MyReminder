@@ -12,4 +12,4 @@ The benefit of using a scheduled job is that PowerShell does not need to be runn
 * The module relies on the MSG.EXE command line tool which may not be available on server operating systems.
 * The scheduled reminder is intended for the current or interactive user. This system is not designed or intended to send reminders to remote computers.
 
-_last update August 31, 2016_
+_last update 15 September, 2018_

@@ -5,6 +5,7 @@ schema: 2.0.0
 ---
 
 # Get-ScheduledReminderJob
+
 ## SYNOPSIS
 Get scheduled reminder jobs.
 
@@ -15,7 +16,8 @@ Get-ScheduledReminderJob [[-Name] <String>]
 ```
 
 ## DESCRIPTION
-Get scheduled reminder jobs. You can use this command to filter out reminder jobs from other scheduled jobs.
+Get scheduled reminder jobs.
+You can use this command to filter out reminder jobs from other scheduled jobs.
 
 ## EXAMPLES
 
@@ -65,7 +67,8 @@ Get all scheduled reminder jobs and remove them.
 ## PARAMETERS
 
 ### -Name
-The name of a scheduled reminder job. See examples.
+The name of a scheduled reminder job.
+See examples.
 
 ```yaml
 Type: String
@@ -74,7 +77,7 @@ Aliases:
 
 Required: False
 Position: 0
-Default value: 
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
 ```
@@ -88,11 +91,10 @@ Accept wildcard characters: True
 ### [Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition]
 
 ## NOTES
-Last Updated: August 30, 2016
+Last Updated: August 30, 2016 
 Version     : 3.1
 
-Learn more about PowerShell:
-http://jdhitsolutions.com/blog/essential-powershell-resources/
+Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
 
 ## RELATED LINKS
 

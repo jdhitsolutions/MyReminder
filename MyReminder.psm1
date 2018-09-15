@@ -4,8 +4,6 @@
 
 Function New-ScheduledReminderJob {
 
-# .ExternalHelp MyReminder-help.xml
-
 [cmdletbinding(DefaultParameterSetName="Minutes",SupportsShouldProcess)]
 [OutputType("Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition")]
 
@@ -183,7 +181,6 @@ End {
 
 Function Get-ScheduledReminderJob {
 
-# .ExternalHelp MyReminder-help.xml
 
 [cmdletbinding()]
 [OutputType("Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition")]
@@ -368,3 +365,5 @@ Set-Alias -Name gsrj -Value Get-ScheduledReminderJob
 
 #endregion
 
+Export-ModuleMember -alias 'tickle','nsrj','gsrj' -Function 'New-ScheduledReminderJob','Get-ScheduledReminderJob',
+'Remove-ScheduledReminderJob','Export-ScheduledReminderJob'
