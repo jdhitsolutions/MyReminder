@@ -99,7 +99,8 @@ Process {
         #get last job ID to build the jobname
         #ignore any errors if job not found
         Write-Verbose "[PROCESS] Checking for previous Reminder scheduled jobs"
-        $lastjob = Get-ScheduledJob -Name "Reminder*" -ErrorAction SilentlyContinue | sort ID | select -last 1
+        $lastjob = Get-ScheduledJob -Name "Reminder*" -ErrorAction SilentlyContinue | 
+        sort-object -property ID | select-object -last 1
     
         if ($lastjob) {
             #define a regular expression
@@ -303,7 +304,7 @@ if ($jobs) {
         #use the default path value
         $PSBoundParameters.Path = $Path
     }
-    $jobs | Select Name,When,Wait,Message | Export-Csv @PSBoundParameters
+    $jobs | Select-Object Name,When,Wait,Message | Export-Csv @PSBoundParameters
 }
 else {
     Write-Warning "No reminder jobs found to export"

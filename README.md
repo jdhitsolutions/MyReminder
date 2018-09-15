@@ -1,5 +1,7 @@
 # MyReminder #
 
+    THIS PROJECT HAS BEEN DROPPED
+
 This PowerShell module is an extension of scheduled jobs and is designed to display a popup reminder for the current user (you) at a given time.
 
 The commands in the module are wrappers for the scheduled job commands that will create and display a scheduled job reminder. The module defines an additional type name that is used with custom type and formatting extensions.

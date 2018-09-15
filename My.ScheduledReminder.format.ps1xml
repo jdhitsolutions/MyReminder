@@ -80,8 +80,7 @@ Any changes made to this file may be overwritten in future module updates
                             </TableColumnItem>
                              <TableColumnItem>
                                 <PropertyName>Message</PropertyName>
-                            </TableColumnItem>
-                           
+                            </TableColumnItem>                           
                         </TableColumnItems>
                     </TableRowEntry>
                 </TableRowEntries>
