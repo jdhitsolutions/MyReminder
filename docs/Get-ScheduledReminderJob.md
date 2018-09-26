@@ -1,79 +1,72 @@
 ---
-external help file: myreminder-Help.xml
-online version: 
+external help file: myreminder-help.xml
+Module Name: myreminder
+online version:
 schema: 2.0.0
 ---
 
 # Get-ScheduledReminderJob
 
 ## SYNOPSIS
+
 Get scheduled reminder jobs.
 
 ## SYNTAX
 
-```
-Get-ScheduledReminderJob [[-Name] <String>]
+```yaml
+Get-ScheduledReminderJob [[-Name] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get scheduled reminder jobs.
-You can use this command to filter out reminder jobs from other scheduled jobs.
+
+Get scheduled reminder jobs. You can use this command to filter out reminder jobs from other scheduled jobs.
 
 ## EXAMPLES
 
-### -------------------------- EXAMPLE 1 --------------------------
-```
+### Example 1
+
+```powershell
 PS C:\> get-scheduledreminderjob
 
 
-Id         Name            JobTriggers     Command                    Enabled
---         ----            -----------     -------                    -------
-8          Reminder-2      1               ...                        True
-9          Reminder-3      1               ...                        True
-10         HR Meeting      1               ...                        True
+ID Name            Schedule   When                      TimeRemaining  Wait(Min) Message
+-- ----            --------   ----                      -------------  --------- -------
+ 6 Reminder-1      Daily      9/27/2018 11:45:00 AM          23:19:55          1 Test 1
+ 7 Reminder-2      Weekly     10/3/2018 11:50:00 AM        6.23:24:55          1 Test 2
+ 8 Reminder-3      Daily      9/28/2018 11:55:00 AM        1.23:29:54          1 Test 3
+11 EndOfDay        Once       9/26/2018 5:00:00 PM           04:34:54          2 Go home
 ```
 
-### -------------------------- EXAMPLE 2 --------------------------
-```
+### Example 2
+
+```powershell
 PS C:\> get-scheduledreminderjob reminder*
 
-Id         Name            JobTriggers     Command                    Enabled
---         ----            -----------     -------                    -------
-8          Reminder-2      1               ...                        True
-9          Reminder-3      1               ...                        True
+ID Name            Schedule   When                      TimeRemaining  Wait(Min) Message
+-- ----            --------   ----                      -------------  --------- -------
+ 6 Reminder-1      Daily      9/27/2018 11:45:00 AM          23:19:55          1 Test 1
+ 7 Reminder-2      Weekly     10/3/2018 11:50:00 AM        6.23:24:55          1 Test 2
+ 8 Reminder-3      Daily      9/28/2018 11:55:00 AM        1.23:29:54          1 Test 3
 ```
 
-### -------------------------- EXAMPLE 3 --------------------------
-```
+### Example 3
+
+```powershell
 PS C:\> get-scheduledreminderjob reminder-2 | get-jobtrigger | set-jobtrigger -At "11:00AM"
 ```
 
 Get the Reminder-2 job and modify the time to 11:00AM today.
 
-### -------------------------- EXAMPLE 4 --------------------------
-```
-PS C:\> get-scheduledreminderjob hr* | Unregister-ScheduledJob
-```
-
-Get the HR Meeting scheduled job as seen in the first example and remove it.
-
-### -------------------------- EXAMPLE 5 --------------------------
-```
-PS C:\> get-scheduledreminderjob | Unregister-ScheduledJob
-```
-
-Get all scheduled reminder jobs and remove them.
-
 ## PARAMETERS
 
 ### -Name
-The name of a scheduled reminder job.
-See examples.
+
+The name of a scheduled reminder job. See examples.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -82,17 +75,19 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
+### CommonParameters
+
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+
 ## INPUTS
 
 ### None
 
 ## OUTPUTS
 
-### [Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition]
+### [My.ScheduledReminder]
 
 ## NOTES
-Last Updated: August 30, 2016 
-Version     : 3.1
 
 Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell-resources/
 
@@ -101,4 +96,3 @@ Learn more about PowerShell: http://jdhitsolutions.com/blog/essential-powershell
 [New-ScheduledReminderJob]()
 
 [Get-ScheduledJob]()
-
