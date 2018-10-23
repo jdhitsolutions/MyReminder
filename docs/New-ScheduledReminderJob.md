@@ -91,7 +91,7 @@ Create a weekly popup reminder for every Friday at 12:50PM. The message will dis
 
 ### -Message
 
-The text to display in the popup from MSG.EXE. This should not be an exceptionally long message. You should also try to avoid using single or double quotes. Although single quotes should be automatically turned into curly quotes. If you don't see your message, it may be because msg.exe can't display it. 
+The text to display in the popup from MSG.EXE. This should not be an exceptionally long message. You should also try to avoid using single or double quotes. Although single quotes should be automatically turned into curly quotes. If you don't see your message, it may be because msg.exe can't display it.
 
 ```yaml
 Type: String

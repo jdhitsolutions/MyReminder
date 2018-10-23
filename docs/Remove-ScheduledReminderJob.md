@@ -27,7 +27,7 @@ Remove-ScheduledReminderJob [-ID <Int32>] [-WhatIf] [-Confirm] [<CommonParameter
 
 ## DESCRIPTION
 
-User this command to remove a scheduled reminder job. Although you could also use Unregister-Scheduledjob. 
+User this command to remove a scheduled reminder job. Although you could also use Unregister-Scheduledjob.
 
 ## EXAMPLES
 
